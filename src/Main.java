@@ -2,6 +2,8 @@ public class Main {
     public Card [] deck;
 
     public Player player;
+    public Player dealer;
+    int deckSpot;
 
     public static void main(String[] args) {
         Main blackjack = new Main();
@@ -22,6 +24,29 @@ public class Main {
             }
         }
         shuffle();
+        deckSpot = 0;
+        player = new Player(1, "Player");
+        dealer = new Player(2, "Dealer");
+
+        //dealer.addCard(dealCard());
+        //player.addCard(dealCard());
+        //player.addCard(dealCard());
+
+        System.out.println("Dealer's hand:");
+        dealer.printHand();
+        //System.out.println("Dealer total: " + dealer.sumCards());
+
+        System.out.println();
+
+        System.out.println("Player's hand:");
+        player.printHand();
+       // System.out.println("Player total: " + player.sumCards());
+
+
+
+
+
+
         printDeck();
 
     }
@@ -40,5 +65,11 @@ public class Main {
 //shuffling, remember this
         }
         }
+
+
+        //create a player and a dealer
+    // Dealer gets a card then player gets 2 cards
+    //Player's turn stands or hits
+    // Dealers turn
 
 }
