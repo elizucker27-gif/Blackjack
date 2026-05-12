@@ -1,9 +1,12 @@
+import java.util.Scanner;
+
 public class Main {
     public Card [] deck;
 
     public Player player;
     public Player dealer;
     int deckSpot;
+    String hidden;
 
     public static void main(String[] args) {
         Main blackjack = new Main();
@@ -28,9 +31,20 @@ public class Main {
         player = new Player(1, "Player");
         dealer = new Player(2, "Dealer");
 
-        //dealer.addCard(dealCard());
-        //player.addCard(dealCard());
-        //player.addCard(dealCard());
+        int numCards = 0;
+
+        dealer.addCard(deck[numCards]);
+        numCards++;
+
+       // deck[numCards].hidden = true;
+        dealer.addCard(deck[numCards]);
+        numCards++;
+
+        player.addCard(deck[numCards]);
+        numCards++;
+
+        player.addCard(deck[numCards]);
+        numCards++;
 
         System.out.println("Dealer's hand:");
         dealer.printHand();
@@ -44,6 +58,11 @@ public class Main {
 
 
 
+
+        System.out.println();
+        System.out.println("Dealer's hidden card:");
+
+        dealer.printHand();
 
 
 
@@ -72,4 +91,8 @@ public class Main {
     //Player's turn stands or hits
     // Dealers turn
 
+    //input.equals(string);
+
 }
+//Scanner sc = new Scanner (System.in);
+//String input = sc.nextLine();
