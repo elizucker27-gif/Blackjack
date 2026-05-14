@@ -5,15 +5,14 @@ public class Player {
     int numCards;
     int numPlayer;
 
+
     public Player ( int pnumPlayer, String pName){
-
         numPlayer = pnumPlayer;
-
         name = pName;
-
         hand = new Card[11];
-
         numCards = 0;
+
+
     }
     public void printHand(){
         for (int i = 0; i < numCards; i++) {
@@ -29,8 +28,16 @@ public class Player {
         numCards++;
     }
 
+    public int sumCards() {
+        int sum = 0;
+        for (int i = 0; i < numCards; i++) {
+            sum = sum + hand[i].value;
+        }
+        return sum;
+    }
 
 
-    //need a sum Cards
+
+
 
 }

@@ -2,16 +2,18 @@ public class Card {
     public int value;
     public String suit;
     public boolean isUp;
+    boolean hidden;
 
 
-   // public static void main(String[] args) {
+    // public static void main(String[] args) {
        // Card card = new Card();
   //  }
 
-    public Card(int pvalue, String psuit,boolean pisUp){
+    public Card(int pvalue, String psuit,boolean pisUp, boolean phidden){
 value = pvalue;
 suit = psuit;
 isUp = pisUp;
+hidden = phidden;
     }
     public void printInfo() {
         if (value == 0) {

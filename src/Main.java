@@ -17,13 +17,13 @@ public class Main {
         for (int i = 0; i < deck.length; i++) {
             if ( i<13){
 
-                deck[i] = new Card(i % 13, "Spades", false);
+                deck[i] = new Card(i % 13, "Spades", false, false);
             } else if (i < 26) {
-                deck[i] = new Card(i % 13, "Diamonds", false);
+                deck[i] = new Card(i % 13, "Diamonds", false, false);
             } else if (i < 39) {
-                deck[i] = new Card(i % 13, "Hearts", false);
+                deck[i] = new Card(i % 13, "Hearts", false, false);
             } else if (i < 52) {
-                deck[i] = new Card(i % 13, "Clubs", false);
+                deck[i] = new Card(i % 13, "Clubs", false, true);
             }
         }
         shuffle();
@@ -36,7 +36,7 @@ public class Main {
         dealer.addCard(deck[numCards]);
         numCards++;
 
-       // deck[numCards].hidden = true;
+        deck[numCards].hidden = true;
         dealer.addCard(deck[numCards]);
         numCards++;
 
@@ -48,15 +48,13 @@ public class Main {
 
         System.out.println("Dealer's hand:");
         dealer.printHand();
-        //System.out.println("Dealer total: " + dealer.sumCards());
+        System.out.println("Dealer total: " + dealer.sumCards());
 
         System.out.println();
 
         System.out.println("Player's hand:");
         player.printHand();
-       // System.out.println("Player total: " + player.sumCards());
-
-
+        System.out.println("Player total: " + player.sumCards());
 
 
         System.out.println();
@@ -75,15 +73,19 @@ public class Main {
                 deck[i].printInfo();
             }
         }
-        public void shuffle(){
-        for (int i = 0; i < deck.length; i ++){
-            int randNum = (int) (Math.random()*52);
-            Card holdCard = deck[randNum];
-            deck[randNum] = deck[i];
-            deck[i] = holdCard;
+        public void shuffle() {
+            for (int i = 0; i < deck.length; i++) {
+                int randNum = (int) (Math.random() * 52);
+                Card holdCard = deck[randNum];
+                deck[randNum] = deck[i];
+                deck[i] = holdCard;
 //shuffling, remember this
+            }
         }
-        }
+
+
+
+
 
 
         //create a player and a dealer
@@ -91,7 +93,7 @@ public class Main {
     //Player's turn stands or hits
     // Dealers turn
 
-    //input.equals(string);
+    //strings must use input.equals(string   like "hit");
 
 }
 //Scanner sc = new Scanner (System.in);
